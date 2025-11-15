@@ -1,9 +1,9 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Amethyst-Template RP",
-        "description": "By FrederoxDev",
-        "uuid": "<replace-with-a-new-uuid>",
+        "name": "MagicStorage RP",
+        "description": "For MagicStorage Mod",
+        "uuid": "867f3ec0-17ab-4573-ba40-793d9df23efc",
         "version": [
             1,
             0,
@@ -18,7 +18,7 @@
     "modules": [
         {
             "type": "resources",
-            "uuid": "<replace-with-a-new-uuid>",
+            "uuid": "0f8837be-c5be-4509-89da-45490d2ba8db",
             "version": [
                 1,
                 0,

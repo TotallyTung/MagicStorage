@@ -1,5 +1,5 @@
 -- Mod Options
-local mod_name = "Amethyst-Template" -- Replace with the name of your mod
+local mod_name = "MagicStorage" -- Replace with the name of your mod
 local targetMajor, targetMinor, targetPatch = 1, 21, 3 -- 1.21.0.3 (Other versions not supported by Amethyst)
 local config_options = {} -- Any additional options, see: https://github.com/AmethystAPI/Amethyst-Template/blob/main/README.md
 
