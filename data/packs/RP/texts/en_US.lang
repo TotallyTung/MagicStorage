@@ -1,0 +1,6 @@
+item.mstorage:shadow_diamond.name=Shadow Diamond
+
+tile.mstorage:storage_component.name=Storage Component
+tile.mstorage:storage_heart.name=Storage Heart
+tile.mstorage:storage_unit.name=Storage Unit
+tile.mstorage:crafting_interface.name=Storage Crafting Interface

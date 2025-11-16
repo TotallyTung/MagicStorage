@@ -24,7 +24,7 @@ for (const entry of walkSync(itemTexturesFolder, { exts: [".png"], includeFiles:
 }
 
 createFile({
-    resource_pack_name: "MagicStorage RP",
+    resource_pack_name: "Magic Storage",
     texture_name: 'atlas.items',
     texture_data: textureData,
 });

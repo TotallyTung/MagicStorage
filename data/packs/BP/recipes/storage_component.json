@@ -1,0 +1,25 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "mstorage:storage_component"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "###",
+            "#P#",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:iron_ingot"
+            },
+            "P": {
+                "item": "minecraft:planks"
+            }
+        },
+        "result": {
+            "item": "mstorage:storage_component"
+        }
+    }
+}

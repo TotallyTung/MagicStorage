@@ -2,8 +2,8 @@
     "format_version": 2,
     "header": {
         "name": "Magic Storage",
-        "description": "For Magic Storage Mod",
-        "uuid": "867f3ec0-17ab-4573-ba40-793d9df23efc",
+        "description": "For Magic Storage mod",
+        "uuid": "ed17dbf3-9ab9-46f3-ab5a-dc6c0e7d9a95",
         "version": [
             1,
             0,
@@ -17,8 +17,8 @@
     },
     "modules": [
         {
-            "type": "resources",
-            "uuid": "0f8837be-c5be-4509-89da-45490d2ba8db",
+            "type": "data",
+            "uuid": "65982bf5-ea47-460c-a4e6-5f1853c9d3a5",
             "version": [
                 1,
                 0,

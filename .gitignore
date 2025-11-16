@@ -10,3 +10,6 @@
 !data/packs/RP/textures/items
 !data/packs/RP/textures/entity
 !data/packs/BP
+
+*.cmd
+*.bat

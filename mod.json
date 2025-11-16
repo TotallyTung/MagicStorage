@@ -3,7 +3,7 @@
     "meta": {
         "name": "MagicStorage",
         "version": "0.0.0",
-        "namespace": "magicstorage",
+        "namespace": "mstorage",
         "author": "Tung",
         "uuid": "4170c2f8-aa96-4bf2-8cc6-ada0581b9a31",
         "dependencies": [
