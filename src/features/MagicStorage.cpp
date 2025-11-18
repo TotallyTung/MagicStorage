@@ -1,4 +1,5 @@
 #include "MagicStorage.hpp"
+#include <amethyst/runtime/events/GameEvents.hpp>
 #include "item/ModItems.hpp"
 #include "block/ModBlocks.hpp"
 

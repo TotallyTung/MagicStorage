@@ -1,13 +1,24 @@
 #pragma once
+#include <magic_enum/magic_enum.hpp>
 #include "../../CustomBlock.hpp"
-#include "../StorageUnit/StorageUnit.hpp"
-#include "StorageHeartListener.hpp"
+
+struct StorageInfo {
+	int maxStorages = 32;
+	int storageCapacity = 0;
+	std::unordered_set<BlockPos> storageUnits;
+	bool hasCraftingInterface = false;
+};
+
+enum class StorageCoreError {
+	NONE = 0,
+	CONNECTION_ERROR = 1,
+	STORAGE_LIMIT_ERROR = 2,
+};
 
 class StorageHeart : public CustomBlock {
 public:
 	inline static const std::string identifier = "mstorage:storage_heart";
 	std::shared_ptr<StorageInfo> storageInfo = std::make_shared<StorageInfo>();
-	mutable std::shared_ptr<StorageHeartListener> listener = nullptr;
 
 public:
 	StorageHeart(const std::string& name, short id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Solid)) {};
@@ -31,6 +42,4 @@ public:
 	}
 
 	virtual bool use(Player& player, const BlockPos& pos, Facing::Name face) const override;
-	virtual void onPlace(BlockSource& src, const BlockPos& pos) const;
-	virtual void onRemove(BlockSource& src, const BlockPos& pos) const;
 };
