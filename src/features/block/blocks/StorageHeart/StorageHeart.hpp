@@ -1,19 +1,7 @@
 #pragma once
 #include <magic_enum/magic_enum.hpp>
-#include "../../CustomBlock.hpp"
-
-struct StorageInfo {
-	int maxStorages = 32;
-	int storageCapacity = 0;
-	std::unordered_set<BlockPos> storageUnits;
-	bool hasCraftingInterface = false;
-};
-
-enum class StorageCoreError {
-	NONE = 0,
-	CONNECTION_ERROR = 1,
-	STORAGE_LIMIT_ERROR = 2,
-};
+#include "StorageEnums.hpp"
+#include <features/block/CustomBlock.hpp>
 
 class StorageHeart : public CustomBlock {
 public:
@@ -36,9 +24,9 @@ public:
 	}
 
 	virtual void initGraphics(InitBlockGraphicsEvent& ev) override {
-		BlockGraphics* radioactiveSubstanceBG = BlockGraphics::createBlockGraphics(mNameInfo.mFullName, BlockShape::BLOCK);
-		radioactiveSubstanceBG->setTextureItem(identifier);
-		radioactiveSubstanceBG->setDefaultCarriedTextures();
+		BlockGraphics* blockGraphic = BlockGraphics::createBlockGraphics(mNameInfo.mFullName, BlockShape::BLOCK);
+		blockGraphic->setTextureItem(identifier);
+		blockGraphic->setDefaultCarriedTextures();
 	}
 
 	virtual bool use(Player& player, const BlockPos& pos, Facing::Name face) const override;

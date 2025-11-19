@@ -19,8 +19,8 @@ public:
 	}
 
 	virtual void initGraphics(InitBlockGraphicsEvent& ev) override {
-		BlockGraphics* radioactiveSubstanceBG = BlockGraphics::createBlockGraphics(mNameInfo.mFullName, BlockShape::BLOCK);
-		radioactiveSubstanceBG->setTextureItem(identifier);
-		radioactiveSubstanceBG->setDefaultCarriedTextures();
+		BlockGraphics* blockGraphic = BlockGraphics::createBlockGraphics(mNameInfo.mFullName, BlockShape::BLOCK);
+		blockGraphic->setTextureItem(identifier);
+		blockGraphic->setDefaultCarriedTextures();
 	}
 };

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "mstorage:storage_unit"
+		},
+		"tags": ["crafting_table"],
+		"pattern": [
+			" A ",
+			"GCG",
+			" G "
+		],
+		"key": {
+            "C": {
+				"item": "mstorage:storage_component"
+			},
+			"A": {
+				"item": "minecraft:chest"
+			},
+			"G": {
+				"item": "minecraft:gold_ingot"
+			}
+		},
+		"result": {
+            "item": "mstorage:storage_unit",
+            "count": 1
+        }
+	}
+}

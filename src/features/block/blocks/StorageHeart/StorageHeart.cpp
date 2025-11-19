@@ -6,6 +6,11 @@
 #include <mc/src/common/world/level/block/Block.hpp>
 #include <mc/src/common/world/actor/Actor.hpp>
 #include <mc/src-deps/core/math/Math.hpp>
+#include <mc/src-client/common/client/gui/screens/controllers/ContainerScreenController.hpp>
+#include <mc/src-client/common/client/gui/screens/SceneCreationUtils.hpp>
+#include <mc/src-client/common/client/gui/screens/SceneFactory.hpp>
+#include <mc/src-client/common/client/gui/screens/UIScene.hpp>
+#include <features/ui/StorageUI/screen/StorageScreenController.hpp>
 
 static inline std::deque<BlockPos> getPosAroundBlock(BlockPos pos) {
 	return {
@@ -64,13 +69,26 @@ static std::pair<bool, StorageCoreError> updateStorageUnits(BlockSource& src, co
 bool StorageHeart::use(Player& player, const BlockPos& pos, Facing::Name face) const {
 	auto result = updateStorageUnits(player.getDimensionBlockSource(), pos, storageInfo);
 	if (player.isClientSide()) {
-		auto client = Amethyst::GetClientCtx().mClientInstance;
-		auto guiData = client->mGuiData.get();
+		auto& client = *Amethyst::GetClientCtx().mClientInstance;
+		auto& game = *client.mMinecraftGame;
+		auto guiData = client.mGuiData.get();
 		if (!result.first) {
 			guiData->displayLocalizedMessage(std::format("§g{} [{}]", getStorageErrorMessage(result.second), magic_enum::enum_name(result.second)));
 		}
 		else {
 			guiData->displayLocalizedMessage(std::format("Connected storages: {} | Crafting Interface: {}", storageInfo->storageUnits.size(), storageInfo->hasCraftingInterface));
+			auto& factory = *client.mSceneFactory;
+			auto model = SceneCreationUtils::_createModel<ClientInstanceScreenModel>(
+				factory,
+				game,
+				client,
+				factory.mAdvancedGraphicOptions
+			);
+			auto interactionModel = ContainerScreenController::interactionModelFromUIProfile(model->getUIProfile());
+			auto controller = std::make_shared<StorageScreenController>(model, interactionModel, this->storageInfo);
+			auto scene = factory.createUIScene(game, client, "magic_storage.storage_screen", controller);
+			auto screen = factory._createScreen(scene);
+			factory.getCurrentSceneStack()->pushScreen(screen, false);
 		}
 	}
 	return true;
