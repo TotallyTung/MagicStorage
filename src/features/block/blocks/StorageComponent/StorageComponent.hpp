@@ -3,7 +3,7 @@
 
 class StorageComponent : public CustomBlock {
 public:
-	inline static const std::string identifier = "mstorage:storage_component";
+	inline static const std::string identifier = "magic_storage:storage_component";
 	StorageComponent(const std::string& name, short id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Solid)) {};
 
 	virtual void registerItem(RegisterItemsEvent& ev) override {

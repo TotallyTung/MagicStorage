@@ -5,7 +5,7 @@ class StorageUnit : public CustomBlock {
 private:
 
 public:
-	inline static const std::string identifier = "mstorage:storage_unit";
+	inline static const std::string identifier = "magic_storage:storage_unit";
 	StorageUnit(const std::string& name, short id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Solid)) {};
 
 	virtual void registerItem(RegisterItemsEvent& ev) override {

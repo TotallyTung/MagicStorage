@@ -2,7 +2,7 @@
 	"format_version": "1.12",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "mstorage:storage_heart"
+			"identifier": "magic_storage:storage_heart"
 		},
 		"tags": ["crafting_table"],
 		"pattern": [
@@ -12,7 +12,7 @@
 		],
 		"key": {
 			"S": {
-				"item": "mstorage:shadow_diamond"
+				"item": "magic_storage:shadow_diamond"
 			},
             "D": {
 				"item": "minecraft:diamond"
@@ -21,11 +21,11 @@
 				"item": "minecraft:emerald"
 			},
             "C": {
-				"item": "mstorage:storage_component"
+				"item": "magic_storage:storage_component"
 			}
 		},
 		"result": {
-            "item": "mstorage:storage_heart",
+            "item": "magic_storage:storage_heart",
             "count": 1
         }
 	}

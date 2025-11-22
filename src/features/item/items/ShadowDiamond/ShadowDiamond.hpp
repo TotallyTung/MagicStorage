@@ -3,8 +3,8 @@
 
 class ShadowDiamond : public Item {
 public:
-	inline static std::string identifier = "mstorage:shadow_diamond";
+	inline static std::string identifier = "magic_storage:shadow_diamond";
 	ShadowDiamond(const std::string& name, short id) : Item(name, id) {
-		setIconInfo("mstorage:shadow_diamond", 0);
+		setIconInfo("magic_storage:shadow_diamond", 0);
 	}
 };

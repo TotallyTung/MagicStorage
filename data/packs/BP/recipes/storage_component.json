@@ -2,7 +2,7 @@
     "format_version": "1.12",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier": "mstorage:storage_component"
+            "identifier": "magic_storage:storage_component"
         },
         "tags": [ "crafting_table" ],
         "pattern": [
@@ -19,7 +19,7 @@
             }
         },
         "result": {
-            "item": "mstorage:storage_component"
+            "item": "magic_storage:storage_component"
         }
     }
 }

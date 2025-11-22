@@ -53,14 +53,14 @@ static std::pair<bool, StorageCoreError> updateStorageUnits(BlockSource& src, co
 
 		auto& block = src.getBlock(node);
 		auto& blockName = block.mLegacyBlock->mNameInfo.mFullName.getString();
-		if (blockName == "mstorage:storage_unit") {
+		if (blockName == "magic_storage:storage_unit") {
 			info->storageUnits.insert(node);
 			for (auto& i : getPosAroundBlock(node)) {
 				if (!visited.contains(i)) queue.push_back(i);
 			}
 		}
-		else if (blockName == "mstorage:crafting_interface") info->hasCraftingInterface = true;
-		else if (blockName == "mstorage:storage_heart") return { false, StorageCoreError::CONNECTION_ERROR };
+		else if (blockName == "magic_storage:crafting_interface") info->hasCraftingInterface = true;
+		else if (blockName == "magic_storage:storage_heart") return { false, StorageCoreError::CONNECTION_ERROR };
 		else if (info->storageUnits.size() > info->maxStorages) return { false, StorageCoreError::STORAGE_LIMIT_ERROR };
 	}
 	return { true, StorageCoreError::NONE };
@@ -84,8 +84,7 @@ bool StorageHeart::use(Player& player, const BlockPos& pos, Facing::Name face) c
 				client,
 				factory.mAdvancedGraphicOptions
 			);
-			auto interactionModel = ContainerScreenController::interactionModelFromUIProfile(model->getUIProfile());
-			auto controller = std::make_shared<StorageScreenController>(model, interactionModel, this->storageInfo);
+			auto controller = std::make_shared<StorageScreenController>(model, this->storageInfo);
 			auto scene = factory.createUIScene(game, client, "magic_storage.storage_screen", controller);
 			auto screen = factory._createScreen(scene);
 			factory.getCurrentSceneStack()->pushScreen(screen, false);

@@ -3,7 +3,7 @@
 
 class CraftingInterface : public CustomBlock {
 public:
-	inline static const std::string identifier = "mstorage:crafting_interface";
+	inline static const std::string identifier = "magic_storage:crafting_interface";
 
 public:
 	CraftingInterface(const std::string& name, short id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Solid)) {};

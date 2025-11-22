@@ -2,7 +2,7 @@
 	"format_version": "1.12",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "mstorage:storage_unit"
+			"identifier": "magic_storage:storage_unit"
 		},
 		"tags": ["crafting_table"],
 		"pattern": [
@@ -12,7 +12,7 @@
 		],
 		"key": {
             "C": {
-				"item": "mstorage:storage_component"
+				"item": "magic_storage:storage_component"
 			},
 			"A": {
 				"item": "minecraft:chest"
@@ -22,7 +22,7 @@
 			}
 		},
 		"result": {
-            "item": "mstorage:storage_unit",
+            "item": "magic_storage:storage_unit",
             "count": 1
         }
 	}
